@@ -1,0 +1,10 @@
+[Unit]
+Description = Silan SC7314 Audio IC Init
+After = kernel-modules-load.service network-online.target
+
+[Service]
+TimeoutStopSec = 20
+ExecStart = /usr/bin/python /usr/local/bin/audio-init.py
+
+[Install]
+WantedBy = multi-user.target
